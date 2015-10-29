@@ -31,7 +31,11 @@ RSpec.describe AddressBook do
       book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
       new_entry = book.entries[0]
 
+<<<<<<< HEAD
       expect(new_entry.name).to eq('Ada Loelace')
+=======
+      expect(new_entry.name).to eq('Ada Lovelace')
+>>>>>>> checkpoint-20-address-bloc-menu
       expect(new_entry.phone_number).to eq('010.012.1815')
       expect(new_entry.email).to eq('augusta.king@lovelace.com')
     end
@@ -40,9 +44,23 @@ RSpec.describe AddressBook do
   describe "#remove_entry" do
     it "removes only one entry from the address book" do
       book = AddressBook.new
+<<<<<<< HEAD
       book.remove_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
 
       expect(book.entries.size).to eq(0)
+=======
+      book.add_entry('Will Stryker', '010.012.2000', 'will.stryker@stryker.com')
+
+      name = 'Ada Lovelace'
+      phone_number = '010.012.1815'
+      email = 'augusta.king@lovelace.com'
+      book.add_entry(name, phone_number, email)
+
+      expect(book.entries.size).to eq(2)
+      book.remove_entry(name, phone_number, email)
+      expect(book.entries.size).to eq 1
+      expect(book.entries.first.name).to eq('Will Stryker')
+>>>>>>> checkpoint-20-address-bloc-menu
     end
   end
 end

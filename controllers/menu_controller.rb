@@ -52,7 +52,7 @@ class MenuController
 
   def view_entry_n
     puts "Entry number please: "
-    selection = gets.chomp
+    selection = gets.chomp.to_i
 
     if selection < @address_book.entries.count
       puts @address_book.entries[selection]

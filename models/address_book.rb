@@ -18,14 +18,7 @@ class AddressBook
 
     @entries.insert(index, Entry.new(name, phone_number, email))
   end
-<<<<<<< HEAD
 
-  def remove_entry(name, phone_number, email)
-    index = 0
-    @entries.size
-    index -= 1
-=======
-# Code for assignment: remove_entry method.
   def remove_entry(name, phone_number, email)
 
     @entries.each do |entry|
@@ -34,6 +27,5 @@ class AddressBook
       end
       @entries.delete(delete_entry)
     end
->>>>>>> checkpoint-20-address-bloc-menu
   end
 end

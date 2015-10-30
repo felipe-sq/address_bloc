@@ -2,6 +2,22 @@ require_relative '../models/address_book'
 
 RSpec.describe AddressBook do
   let(:book) { AddressBook.new }
+  def check_entry(entry, expected_name, expected_number, expected_email)
+    expect(entry.name).to eql expected_name
+    expect(entry.phone_number).to eql expected_number
+    expect(entry.email).to eql expected_email
+  end
+
+  describe "#demolish_entries" do
+    it "should delete all entries" do
+      book.add_entry("Ada Lovelace", "010.012.1815", "augusta@lovelace.com")
+      book.add_entry("Will Stryker", "010.012.2020", "will@stryker.com")
+      book.add_entry("Sally Field", "010.012.0101", "sally@field.com")
+
+      book.demolish_entries
+      expect(book.entries.size).to eq 0
+    end
+  end
 
   describe "attributes" do
     it "should respond to entries" do
@@ -154,6 +170,3 @@ end
       check_entry(entry, "Sussie", "555-555-2036", "sussie@blocmail.com")
     end
   end
-
-
-  

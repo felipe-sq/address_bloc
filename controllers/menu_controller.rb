@@ -38,7 +38,7 @@ class MenuController
       main_menu
     when 5
       system "clear"
-      demolish_entries
+      @address_book.demolish_entries
       main_menu
     when 6
       puts "Good-bye!"
@@ -49,7 +49,7 @@ class MenuController
       main_menu
     end
   end
-
+# Code from first assignment attempt, line 53 - 56
   def demolish_entries
     @address_book.entries.clear
     puts "All entries have been deleted"

@@ -23,7 +23,6 @@ class AddressBook
     @entries[selection - 1]
   end
 
-# Code for assignment: remove_entry method.
   def remove_entry(name, phone_number, email)
 
     @entries.each do |entry|

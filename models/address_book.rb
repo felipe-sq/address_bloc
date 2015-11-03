@@ -18,6 +18,11 @@ class AddressBook
 
     @entries.insert(index, Entry.new(name, phone_number, email))
   end
+
+  def get_entry(selection)
+    @entries[selection - 1]
+  end
+
 # Code for assignment: remove_entry method.
   def remove_entry(name, phone_number, email)
 

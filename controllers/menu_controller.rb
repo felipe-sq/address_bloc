@@ -54,8 +54,8 @@ class MenuController
     puts "Entry number please: "
     selection = gets.chomp.to_i
 
-    if selection < @address_book.entries.count
-      puts @address_book.entries[selection]
+    if selection > 0 && selection <= @address_book.entries.size
+      puts @address_book.get_entry(selection)
       puts "Press enter to return to the main menu"
       gets.chomp
       system "clear"
